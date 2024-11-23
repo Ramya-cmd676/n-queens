@@ -60,11 +60,7 @@ function App() {
       <div className="max-w-5xl mx-auto">
         <div className="flex items-center justify-between mb-8">
           <div className="flex items-center gap-6">
-            <img 
-              src="\logo.png" 
-              alt="Event Logo"
-              className="w-12 h-12"
-            />
+            <a>https://social.nisb.in/Condensed---Black-Circle.c3214b41.png</a>
             <div>
               <h1 className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                 CTRL+ALT+FUN
