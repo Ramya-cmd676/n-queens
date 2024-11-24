@@ -13,11 +13,11 @@ export type Level = {
 
 function App() {
   const [levels, setLevels] = useState<Level[]>([
-    { size: 4, completed: false, points: 12 },
-    { size: 5, completed: false, points: 12 },
-    { size: 6, completed: false, points: 12 },
-    { size: 7, completed: false, points: 12 },
-    { size: 8, completed: false, points: 12 },
+    { size: 4, completed: false, points: 0 },
+    { size: 5, completed: false, points: 15 },
+    { size: 6, completed: false, points: 15 },
+    { size: 7, completed: false, points: 15 },
+    { size: 8, completed: false, points: 0 },
   ]);
 
   const [currentLevel, setCurrentLevel] = useState<number | null>(null);
@@ -113,7 +113,7 @@ function App() {
             <div className="bg-white/10 rounded-xl p-6 backdrop-blur-sm">
               <h2 className="text-xl font-semibold mb-4">How to Play</h2>
               <ul className="list-disc list-inside space-y-3 text-gray-200">
-                <li>Select a level to begin</li>
+                <li>Select level 1 to begin</li>
                 <li>Place queens on the board so they don't attack each other</li>
                 <li>Queens can move horizontally, vertically, and diagonally</li>
                 <li>Red highlights show conflicting positions</li>
@@ -133,6 +133,7 @@ function App() {
             <GameBoard
               level={currentLevel}
               size={levels[currentLevel].size}
+              points={levels[currentLevel].points} // Add this line
               onComplete={(time) => handleLevelComplete(currentLevel, time)}
               onNextLevel={handleNextLevel}
             />

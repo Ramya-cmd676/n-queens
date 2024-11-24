@@ -5,11 +5,12 @@ import { checkQueenPlacement, getConflicts } from '../utils/gameLogic';
 interface GameBoardProps {
   level: number;
   size: number;
+  points: number;
   onComplete: (timeSpent: number) => void;
   onNextLevel: () => void;
 }
 
-const GameBoard: React.FC<GameBoardProps> = ({ level, size, onComplete, onNextLevel }) => {
+const GameBoard: React.FC<GameBoardProps> = ({ level, size,points, onComplete, onNextLevel }) => {
   const [board, setBoard] = useState<number[]>(Array(size).fill(-1));
   const [showSuccess, setShowSuccess] = useState<boolean>(false);
   const [startTime] = useState<number>(Date.now());
@@ -121,7 +122,7 @@ const GameBoard: React.FC<GameBoardProps> = ({ level, size, onComplete, onNextLe
             <div className="text-center space-y-4">
               <h3 className="text-2xl font-bold">Level Complete!</h3>
               <p className="text-lg">Time: {timeSpent}s</p>
-              <p className="text-lg">+12 points</p>
+              <p className="text-lg">{points} points</p>
               <div className="relative w-48 h-12 mx-auto overflow-hidden">
                 <button
                   onClick={handleNextLevel}
