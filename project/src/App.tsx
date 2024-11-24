@@ -58,31 +58,33 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 text-white p-8">
       <div className="max-w-5xl mx-auto">
-        <div className="flex items-center justify-between mb-8">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-8 gap-4">
           <div className="flex items-center gap-6">
-            <img 
-              src="https://social.nisb.in/Condensed---Black-Circle.c3214b41.png" 
+            <img
+              src="https://social.nisb.in/Condensed---Black-Circle.c3214b41.png"
               alt="Event Logo"
               className="w-12 h-12"
             />
             <div>
-              <h1 className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+              <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                 CTRL+ALT+FUN
               </h1>
               <p className="text-sm text-gray-300">N-Queens Challenge</p>
             </div>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap gap-4 justify-start sm:justify-end">
             <div className="flex items-center gap-2">
               <Clock className="w-6 h-6 text-blue-400" />
-              <span className="text-xl font-semibold">{totalTime}s</span>
+              <span className="text-lg sm:text-xl font-semibold">{totalTime}s</span>
             </div>
             <div className="flex items-center gap-2">
               <Trophy className="w-6 h-6 text-yellow-400" />
-              <span className="text-xl font-semibold">{totalPoints} points</span>
+              <span className="text-lg sm:text-xl font-semibold">{totalPoints} points</span>
             </div>
           </div>
         </div>
+
+        
 
         {showCompletion ? (
           <CompletionScreen
